@@ -1,0 +1,19 @@
+{
+  "name": "sinaisnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sinais.js",
+  "scripts": {
+    "start": "node index.js",
+    "web": "node web.js"
+  },
+  
+  "author": "fhvstore",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "luxon": "^3.4.4",
+    "node-schedule": "^2.1.1",
+    "node-telegram-bot-api": "^0.64.0"
+  }
+}
