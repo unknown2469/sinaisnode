@@ -2,9 +2,10 @@
   "name": "sinaisnode",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "sinais.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "web": "node web.js"
   },
   
   "author": "fhvstore",
