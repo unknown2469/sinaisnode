@@ -72,6 +72,13 @@ async function enviarOportunidade(bot, chatId) {
 }
 
 function main() {
+  // Excluir o arquivo bot_running.lock se ele existir
+  const lockFilePath = 'bot_running.lock';
+  if (fs.existsSync(lockFilePath)) {
+    fs.unlinkSync(lockFilePath);
+  }
+
+  // Verificar se o bot já está em execução
   checkIfBotIsRunning();
 
   const bot = new TelegramBot(TOKEN);
@@ -79,9 +86,9 @@ function main() {
   // Configuração do webhook
   const app = express();
   const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-   console.log(`Servidor está ouvindo na porta ${PORT}`);
-});
+  app.listen(PORT, () => {
+    console.log(`Servidor está ouvindo na porta ${PORT}`);
+  });
 
   app.use(bodyParser.json());
 
@@ -91,10 +98,6 @@ app.listen(PORT, () => {
   });
 
   bot.setWebHook(`https://sinaisnode-a9178c5335a9.herokuapp.com/${TOKEN}`);
-
-  app.listen(PORT, () => {
-    console.log(`Servidor está ouvindo na porta ${PORT}`);
-  });
 
   const horarios = ["08:40", "09:50", "10:55", "11:37", "11:45", "12:49", "13:47", "14:02",
     "16:10", "16:17", "16:41", "17:31", "17:45", "18:18", "18:30",
