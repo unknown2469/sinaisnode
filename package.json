@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "web": "node web.js"
+    "start": "node index.js"
   },
   "author": "fhvstore",
   "license": "ISC",
